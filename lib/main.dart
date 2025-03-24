@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tuto4/user_screen.dart';
 import 'second_screen.dart';
 import 'first_screen.dart';
 
@@ -13,9 +14,14 @@ final _router = GoRouter(
         GoRoute(
           path: 'second',
           builder: (context, state) {
-            final nbClicks = (state.extra ?? 0) as int;
+            final int nbClicks = (state.extra ?? 0) as int;
             return SecondScreen(nbClicks: nbClicks);
           },
+        ),
+        GoRoute(
+          path: 'users/:username',
+          builder: (context, state) =>
+              UserScreen(username: state.pathParameters['username'] ?? ''),
         ),
       ],
     ),
