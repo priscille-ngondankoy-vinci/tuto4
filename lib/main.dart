@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tuto4/user_screen.dart';
 import 'second_screen.dart';
@@ -28,7 +29,10 @@ final _router = GoRouter(
   ],
 );
 
-void main() => runApp(const MyApp());
+void main() {
+  usePathUrlStrategy();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
