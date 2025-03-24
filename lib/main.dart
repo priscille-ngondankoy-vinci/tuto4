@@ -12,7 +12,10 @@ final _router = GoRouter(
       routes: [
         GoRoute(
           path: 'second',
-          builder: (context, state) => const SecondScreen(),
+          builder: (context, state) {
+            final nbClicks = (state.extra ?? 0) as int;
+            return SecondScreen(nbClicks: nbClicks);
+          },
         ),
       ],
     ),

@@ -32,8 +32,8 @@ class _FirstScreenState extends State<FirstScreen> {
           ),
             const SizedBox(height: 16),
             ElevatedButton(
-              onPressed: () {}, // navigate to second screen
-              child: const Text("go to second screen"),
+              onPressed: () => context.go("/second", extra: nbClicks),
+              child: const Text("Go to second screen"),
             ),
           ],
         ),
